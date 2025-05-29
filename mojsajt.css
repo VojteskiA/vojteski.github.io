@@ -1,0 +1,119 @@
+    
+    @font-face {
+        font-family:mojfont ;
+        src: url(./PlayfairDisplay-VariableFont_wght.ttf);
+    }
+    
+    @font-face {
+        font-family:mojdrugifont ;
+        src: url(./Italianno-Regular.ttf);
+    }
+    
+    
+    /* Resetovanje osnovnih stilova */
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    /* Navigacija */
+    .navbar {
+       /* display: flex;*/
+        align-items: center;
+        background-color: #44955f;
+        padding: 20px 20px;
+    
+    }
+
+    /* Navigacioni linkovi */
+    .nav{
+        list-style: none;
+     
+    }
+
+    .nav td {
+        margin-left: 40px; /* Razmak između linkova */ 
+    }
+
+    .nav td a {
+        color:  black; 
+        text-decoration: none;
+        font-size: 20px; /* Veći font za bolju čitljivost */   
+    }
+        
+    
+    body{
+           
+            background-size: 100% 100vh; /* vh sto posto prozora */
+            margin: 0;
+            padding: 0; 
+        }
+
+    a{
+       font-weight: bold;
+       font-family:  mojfont;
+       
+    }
+    table{
+        width: 100%;
+        text-align: center;
+        
+    }
+    td{
+         border: double  #184327  4px;
+         height: 50px;
+        
+        
+    }
+    #grb  {
+        border: none;
+        width: 110px;
+    
+    }
+    #grb img {
+        width: 100px;
+        height: 100px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 1;
+    }
+    a:hover{
+            background-color: rgb(88, 208, 134);
+        }
+
+    .pozadina{
+          background-color: rgba(193, 195, 195, 0.3);
+          height: 100vh;
+          width: 100%;
+          position: fixed;
+    }
+    h1{
+        text-align: center;
+        font-size: 150px;
+        margin-top: 15%;
+        font-family: 'Courier New', Courier, monospace;
+        color: transparent;
+        -webkit-text-stroke: 5px black;
+       
+    
+    }
+   #centar{
+    position: fixed;
+    z-index: -1;
+    width: 100%;
+    height: 100vh;
+   }
+  form{
+    position: fixed;
+    bottom: 0;
+    margin: 20px;
+    right: 0;
+    
+  }
+  select{
+    background-color: #184327  ;
+    color: white;
+
+  }
+  

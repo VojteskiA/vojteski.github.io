@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="./mojsajt.css" type="text/css"  >
+
+    <title>How to Get to Vršac</title>
+
+    <!-- Google Fonts (optional) -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Icons (Font Awesome) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Roboto', sans-serif;
+            background-color: #184327 ;
+        }
+
+        .div1 {
+            background-color: #184327;
+            width: 100%;
+            min-height: 100vh;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .navbar {
+            margin-bottom: 30px;
+        }
+
+        .nav td {
+            padding-right: 20px;
+        }
+
+        .nav a {
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 18px;
+            color: #184327;
+            transition: color 0.3s ease;
+        }
+
+        .nav a:hover {
+            color: #38a05d;
+        }
+
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 40px;
+        }
+
+        iframe {
+            width: 600px;
+            height: 450px;
+            border: 5px solid #184327;
+            border-radius: 8px;
+            max-width: 100%;
+        }
+
+        .text-block {
+            background-color: #ffffff;
+            color: #333;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            flex: 1;
+        }
+
+        .text-block h2 {
+            font-size: 36px;
+            margin-top: 0;
+            color: #184327;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        .section-title {
+            font-size: 20px;
+            color: #ffffff;
+            background-color: #38a05d;
+            padding: 5px 10px;
+            border-radius: 5px;
+            display: inline-block;
+            margin-top: 20px;
+        }
+
+        .text-block ul {
+            padding-left: 20px;
+            margin: 10px 0;
+        }
+
+        .text-block li {
+            margin-bottom: 10px;
+        }
+
+        .text-block i {
+            margin-right: 8px;
+            color: #38a05d;
+        }
+
+        a {
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        form {
+            margin-top: 30px;
+            text-align: center;
+        }
+
+        select {
+            padding: 10px;
+            font-size: 16px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .text-block {
+                width: 90%;
+            }
+
+            iframe {
+                width: 90%;
+                height: 300px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="div1">
+        <!-- Navigation -->
+        <table class="navbar">
+            <tr class="nav">
+                <td><a href="./index.html">Home</a></td>
+                <td><a href="./znamenitosti.html">Landmarks</a></td>
+                <td><a href="./istorijagrada.html">City History</a></td>
+                <td><a href="./galerija.html">Attractions</a></td>
+                <td><a href="./kontakt.html">GuestBook</a></td>
+            </tr>
+        </table>
+
+        <!-- Main Content -->
+        <div class="container">
+            <!-- Map -->
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2830.694983517364!2d21.30070801572128!3d45.11611787909888!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x475a65e1f3e3af7d%3A0x6bfa9f5057a72f8d!2sVrsac%2C%20Serbia!5e0!3m2!1sen!2srs!4v1683123456789"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+
+            <!-- Text Next to Map -->
+            <div class="text-block">
+                <h2>How to Get to Vršac?</h2>
+
+                <div class="section-title">From Belgrade</div>
+                <p>Vršac is located about <strong>85 km southeast of Belgrade</strong>. It is accessible by several means of transport:</p>
+                <ul>
+                    <li><i class="fas fa-car"></i><strong>By Car:</strong> Highway E-70 through Pančevo leads directly to Vršac. The drive takes around <strong>1h 30min</strong>.</li>
+                    <li><i class="fas fa-train"></i><strong>By Train:</strong> Direct railway line from Belgrade. Duration: <strong>about 2h</strong>. <a href="https://w3.srbvoz.rs/redvoznje" target="_blank">Train schedule</a>.</li>
+                    <li><i class="fas fa-bus"></i><strong>By Bus:</strong> Departures from <em>BAS</em>. The journey takes around <strong>2h</strong>.</li>
+                </ul>
+
+                <div class="section-title">From Novi Sad</div>
+                <p>Vršac is about <strong>130 km</strong> southeast. Options include:</p>
+                <ul>
+                    <li><i class="fas fa-car"></i><strong>By Car:</strong> Via A1/E75 highway toward Belgrade, then toward Vršac. Total: <strong>2h 30min</strong>.</li>
+                    <li><i class="fas fa-bus"></i><strong>By Bus (via Zrenjanin):</strong> First to Zrenjanin, then Zrenjanin–Vršac line.</li>
+                    <li><i class="fas fa-bus"></i><strong>Via Belgrade:</strong> First to Belgrade, then continue by train or bus to Vršac.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Language Dropdown -->
+    <form>
+        <select name="lista" onchange="redirectToLanguage(this)">
+             <option value="kakodovrscaeng.html">English</option>
+            <option value="kakodovrsca.html">Serbian</option>
+            
+        </select>
+    </form>
+
+    <script>
+        function redirectToLanguage(select) {
+            const url = select.value;
+            if (url) {
+                window.location.href = url;
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vršac</title>
+    <link rel="stylesheet" href="./mojsajt.css" type="text/css"  >
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
+</head>
+<body>
+<header>
+<img src="./centar.jpg" alt="centar" id="centar">
+   <table class="navbar" >
+          <tr class="nav">
+            <td id="grb"><img src="grb-removebg-preview.png" alt="Grb Vrsca"></td>
+            <td ><a href="./kakodovrsca.html">Kako do Vršac?</a></td>
+            <td><a href="./znamenitosti.html">Znamenitosti</a></td>
+            <td><a href="./istorijagrada.html">Istorija grada</a></td>
+            <td><a href="./galerija.html">Atrakcije</a></td>
+             <td><a href="./kontakt.html">Utisci posetilaca</a></td>
+            
+        </tr>
+    </table>
+    
+    <div class="pozadina">
+        <h1 class="animate__animated animate__bounce">&bull;VRŠAC&bull;</h1>
+    </div>
+
+
+<form>
+  <select name="lista" onchange="redirectToLanguage(this)">
+    <option value="index.html">Srpski jezik</option>
+    <option value="engleski1.html">Engleski</option>
+  </select>
+</form>
+
+<script>
+  function redirectToLanguage(select) {
+    const url = select.value;
+    if (url) {
+      window.location.href = url;
+    }
+  }
+</script>
+
+</header>    
+<footer></footer>
+
+</body>
+</html>

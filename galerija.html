@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="./mojsajt.css" type="text/css">
+  <title>Galerija</title>
+  <style>
+    body {
+      background-color: #184327;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      color: #fff4dc;
+    }
+    .div1 {
+      background-color: #184327;
+      width: 100%;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+    nav ul {
+      display: flex;
+      justify-content: center;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      gap: 40px;
+    }
+    nav ul li a {
+      color: #fff4dc;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 18px;
+    }
+    h1 {
+      text-align: center;
+      font-size: 48px;
+      margin-top: 30px;
+    }
+    .gallery {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 30px;
+      padding: 40px;
+    }
+    .gallery img {
+      width: 200px;
+      height: 150px;
+      object-fit: cover;
+      border: 4px solid #f4b581;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+    .gallery img:hover {
+      transform: scale(1.05);
+    }
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 999;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0,0,0,0.8);
+    }
+    .modal-content {
+      background-color: #fff4dc;
+      color: #184327;
+      margin: 80px auto;
+      padding: 30px;
+      border: 6px solid #d8a06e;
+      width: 80%;
+      max-width: 700px;
+      border-radius: 15px;
+      text-align: center;
+    }
+    .modal-content img,
+    .modal-content iframe {
+      max-width: 100%;
+      height: auto;
+      border-radius: 10px;
+      border: 4px solid #d8a06e;
+      margin-bottom: 20px;
+    }
+    .modal-content iframe {
+      height: 400px;
+    }
+    .close-btn {
+      float: right;
+      font-size: 28px;
+      font-weight: bold;
+      color: #d66f3e;
+      cursor: pointer;
+    }
+    .close-btn:hover {
+      color: #aa4c1b;
+    }
+    .modal-content a {
+      color: #184327;
+      font-weight: bold;
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="div1">
+ <table class="navbar" >
+          <tr class="nav">
+            <td><a href="./index.html">Početna</a></td>
+            <td ><a href="./kakodovrsca.html">Kako do Vršac?</a></td>
+            <td><a href="./znamenitosti.html">Znamenitosti</a></td>
+            <td><a href="./istorijagrada.html">Istorija grada</a></td>
+            <td><a href="./kontakt.html">Utisci posetilaca</a></td>
+        </tr>
+    </table>
+  </div>
+
+  <div class="gallery">
+    <img src="hrana.png" alt="Hrana" onclick='openModal("dinar.jpg", "Uživajte u specijalitetima tradicionalne kuhinje Vršca.<br><a href=\"https://www.etnokucadinar.rs/sr/\" target=\"_blank\">Posetite Etnokuću Dinar</a><br><br><img src=\"masters.jpg\" alt=\"Masters restoran\" style=\"max-width:100%; border-radius:10px; border:4px solid #d8a06e; margin-top:15px;\"><br><a href=\"https://www.pizzeria-masters.rs/\" target=\"_blank\">Posetite Pizzeriju Masters</a>")'>
+
+    <img src="pice.jpg" alt="Piće" onclick='openModal("vino.jpg", "Vršac je poznat po vrhunskim vinima i osvežavajućim pićima.<br><a href=\"https://vinarijadraskovic.com/\" target=\"_blank\">Posetite Vinariju Drašković</a><br><br><img src=\"velo.jpg\" alt=\"Velo\" style=\"max-width:100%; border-radius:10px; border:4px solid #d8a06e; margin-top:15px;\"><br><a href=\"https://www.instagram.com/velo.vrsac/\" target=\"_blank\">Posetite kafić Velo</a>")'>
+
+    <img src="sport.jpg" alt="Sport" onclick='openModal("milenijum.jpg", "Grad sporta — od košarke do planinarenja na Vršačkim planinama.<br><a href=\"https://www.millennium.rs/\" target=\"_blank\">Posetite sportski centar milenijum</a><br><br><img src=\"planinarenje.jpg\" alt=\"planinarenje\" style=\"max-width:100%; border-radius:10px; border:4px solid #d8a06e; margin-top:15px;\"><br><a href=\"https://sr.wikiloc.com/rute/pjesacenje-po-planinama/serbia/autonomna-pokrajina-vojvodina/vrsac\" target=\"_blank\">Posetite planine Vršca</a>")'>
+
+    <img src="pozoriste.jpg" alt="Pozorište" onclick='openModal("pozoristevrsac.jpg", "Pozorišni život u Vršcu bogat je kulturnim događanjima. <br><a href=\"https://www.npsterija.rs//\" target=\"_blank\">Posetite narodno pozorište Sterija</a>")'>
+
+    <!-- Nova sličica za interaktivnu iframe modal galeriju -->
+    <img src="osmeh.jpg" alt="Nacrtan Vršac" onclick='openModal("iframe:nacrtanvrsac.html", "Pogledajte interaktivni nacrt Vršca.")'>
+  </div>
+
+  <!-- MODAL -->
+  <div id="modal" class="modal">
+    <div class="modal-content">
+      <span class="close-btn" onclick="closeModal()">&times;</span>
+      <div id="modal-body"></div>
+      <p id="modal-desc"></p>
+    </div>
+  </div>
+
+  <script>
+    function openModal(content, description) {
+      const modalBody = document.getElementById('modal-body');
+      modalBody.innerHTML = ""; // očisti prethodni sadržaj
+
+      if (content.startsWith("iframe:")) {
+        const iframe = document.createElement("iframe");
+        iframe.src = content.replace("iframe:", "");
+        iframe.style.width = "100%";
+        iframe.style.borderRadius = "10px";
+        iframe.style.border = "4px solid #d8a06e";
+        iframe.style.height = "400px";
+        modalBody.appendChild(iframe);
+      } else {
+        const img = document.createElement("img");
+        img.src = content;
+        modalBody.appendChild(img);
+      }
+
+      document.getElementById('modal-desc').innerHTML = description;
+      document.getElementById('modal').style.display = 'block';
+    }
+
+    function closeModal() {
+      document.getElementById('modal').style.display = 'none';
+    }
+
+    window.onclick = function(event) {
+      const modal = document.getElementById('modal');
+      if (event.target === modal) {
+        closeModal();
+      }
+    }
+  </script>
+
+</body>
+</html>

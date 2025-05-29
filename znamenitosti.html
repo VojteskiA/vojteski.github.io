@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+     <link rel="stylesheet" href="./mojsajt.css" type="text/css"  >
+    <title>Znamenitosti Vršca</title>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome za ikonice -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Roboto', sans-serif;
+            background-color: #184327 ;
+        }
+
+       
+
+        h2 {
+            font-size: 32px;
+            color: #184327;
+        }
+        .section {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: flex-start;
+            margin: 40px auto;
+            padding: 20px;
+            max-width: 1200px;
+            gap: 30px;
+        }
+      
+
+        .img-box, .slideshow {
+            width: 350px;
+            height: 300px;
+            overflow: hidden;
+            border-radius: 8px;
+            border: 4px solid #184327;
+        }
+
+        .img-box img, .slideshow img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .img-box img:hover, .slideshow img:hover {
+            transform: scale(1.05);
+        }
+
+        .text-box {
+            background-color: rgb(244, 181, 129);
+            padding: 20px;
+            border-radius: 10px;
+            border: 3px solid #184327;
+            max-width: 500px;
+        }
+
+        .text-box p {
+            font-size: 16px;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .slideshow img {
+            position: absolute;
+            opacity: 0;
+            animation: fade 9s infinite;
+        }
+
+        .slideshow {
+            position: relative;
+        }
+
+        .slideshow img:nth-child(1) { animation-delay: 0s; }
+        .slideshow img:nth-child(2) { animation-delay: 3s; }
+        .slideshow img:nth-child(3) { animation-delay: 6s; }
+
+        @keyframes fade {
+            0%, 100% {opacity: 0;}
+            10%, 30% {opacity: 1;}
+            40% {opacity: 0;}
+        }
+
+        @media (max-width: 768px) {
+            .section {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .text-box {
+                max-width: 90%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigacija -->
+    <div class="navbar">
+        <table class="nav">
+            <tr>
+                <td><a href="./index.html">Početna</a></td>
+                <td><a href="./kakodovrsca.html">Kako do Vršca?</a></td>
+                <td><a href="./istorijagrada.html">Istorija grada</a></td>
+                <td><a href="./galerija.html">Galerija</a></td>
+                <td><a href="./kontakt.html">Utisci posetilaca</a></td>
+            </tr>
+        </table>
+    </div>
+
+    <!-- Vršačka kula -->
+    <div class="section">
+        <div class="img-box">
+            <img src="kula.webp" alt="Vršačka kula">
+        </div>
+        <div class="text-box">
+            <h2>Vršačka kula</h2>
+            <p>Vršačka kula je tvrđava na Vršačkom bregu, iznad grada Vršca u Srbiji. Kulu je sagradio despot Đurađ Branković sredinom 15. veka radi odbrane od Osmanlijskog carstva. Danas je obnovljena i otvorena za posetioce, nudeći spektakularan pogled na grad i okolinu.</p>
+        </div>
+    </div>
+
+    <!-- Gradska kuća -->
+    <div class="section">
+        <div class="img-box">
+            <img src="gradskakuca.jpg" alt="Gradska kuća">
+        </div>
+        <div class="text-box">
+            <h2>Gradska kuća</h2>
+            <p>Gradska kuća u Vršcu (Magistrat) je izgrađena 1795. godine i jedna je od najlepših baroknih građevina u ovom delu Srbije. Danas je sedište lokalne samouprave i simbol gradske administracije i istorije.</p>
+        </div>
+    </div>
+
+    <!-- Katedrala -->
+    <div class="section">
+        <div class="slideshow">
+            <img src="katedrala1.jpg" alt="Katedrala">
+            <img src="katedrala2.jpg" alt="Katedrala">
+            <img src="katedrala3.jpg" alt="Katedrala">
+        </div>
+        <div class="text-box">
+            <h2>Rimokatolička crkva</h2>
+            <p>Rimokatolička crkva Sv. Gerharda de Sangredo u Vršcu izgrađena je 1863. godine. Predstavlja jednu od najvećih katoličkih katedrala u Srbiji, prepoznatljiva po svojim vitražima i neogotičkom stilu. Nalazi se u centru grada i važan je verski i kulturni spomenik.</p>
+        </div>
+    </div>
+
+    <!-- Vladičanski dvor -->
+    <div class="section">
+        <div class="img-box">
+            <img src="dvor1.jpg" alt="Vladičanski dvor">
+        </div>
+        <div class="text-box">
+            <h2>Vladičanski dvor</h2>
+            <p>Vladičanski dvor u Vršcu je dvor (boravište) vladike banatskog. Sagrađen je u 18. veku i predstavlja jednu od najvažnijih pravoslavnih rezidencija u Srbiji. Poznat je po svojoj lepoti, biblioteci i ikonostasu.</p>
+        </div>
+    </div>
+
+    <!-- Rumunska crkva -->
+    <div class="section">
+        <div class="slideshow">
+            <img src="rum1.jpg" alt="Rumunska crkva">
+            <img src="rum2.jpg" alt="Rumunska crkva">
+            <img src="rum3.jpg" alt="Rumunska crkva">
+        </div>
+        <div class="text-box">
+            <h2>Rumunska crkva</h2>
+            <p>Rumunska pravoslavna crkva u Vršcu podignuta je 1913. godine i nalazi se u samom centru grada. Ona je središte verskog života rumunske zajednice u Vršcu i prepoznatljiva je po svojim kupolama i bogato ukrašenoj unutrašnjosti.</p>
+        </div>
+    </div>
+
+    <form>
+        <select name="lista" onchange="redirectToLanguage(this)">
+             <option value="znamenitosti.html">Srpski</option>
+            <option value="znamenitostieng.html">Engleski</option>
+            
+        </select>
+    </form>
+
+    <script>
+        function redirectToLanguage(select) {
+            const url = select.value;
+            if (url) {
+                window.location.href = url;
+            }
+        }
+    </script>
+</body>
+</html>

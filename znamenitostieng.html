@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="./mojsajt.css" type="text/css"  >
+    <title>Landmarks of Vršac</title>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Roboto', sans-serif;
+            background-color: #184327 ;
+        }
+
+       
+
+        h2 {
+            font-size: 32px;
+            color: #184327;
+        }
+        .section {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: flex-start;
+            margin: 40px auto;
+            padding: 20px;
+            max-width: 1200px;
+            gap: 30px;
+        }
+      
+
+        .img-box, .slideshow {
+            width: 350px;
+            height: 300px;
+            overflow: hidden;
+            border-radius: 8px;
+            border: 4px solid #184327;
+        }
+
+        .img-box img, .slideshow img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .img-box img:hover, .slideshow img:hover {
+            transform: scale(1.05);
+        }
+
+        .text-box {
+            background-color: rgb(244, 181, 129);
+            padding: 20px;
+            border-radius: 10px;
+            border: 3px solid #184327;
+            max-width: 500px;
+        }
+
+        .text-box p {
+            font-size: 16px;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .slideshow img {
+            position: absolute;
+            opacity: 0;
+            animation: fade 9s infinite;
+        }
+
+        .slideshow {
+            position: relative;
+        }
+
+        .slideshow img:nth-child(1) { animation-delay: 0s; }
+        .slideshow img:nth-child(2) { animation-delay: 3s; }
+        .slideshow img:nth-child(3) { animation-delay: 6s; }
+
+        @keyframes fade {
+            0%, 100% {opacity: 0;}
+            10%, 30% {opacity: 1;}
+            40% {opacity: 0;}
+        }
+
+        @media (max-width: 768px) {
+            .section {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .text-box {
+                max-width: 90%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <div class="navbar">
+        <table class="nav">
+            <tr>
+                <td><a href="./index.html">Home</a></td>
+                <td><a href="./kakodovrsca.html">How to Reach Vršac</a></td>
+                <td><a href="./istorijagrada.html">City History</a></td>
+                <td><a href="./galerija.html">Gallery</a></td>
+                <td><a href="./kontakt.html">Contact</a></td>
+            </tr>
+        </table>
+    </div>
+
+    <!-- Vršac Tower -->
+    <div class="section">
+        <div class="img-box">
+            <img src="kula.webp" alt="Vršac Tower">
+        </div>
+        <div class="text-box">
+            <h2>Vršac Tower</h2>
+            <p>The Vršac Tower is a fortress located on Vršac Hill above the town of Vršac, Serbia. It was built by Despot Đurađ Branković in the mid-15th century for defense against the Ottoman Empire. Today, the tower is restored and open to visitors, offering a spectacular view of the town and surrounding area.</p>
+        </div>
+    </div>
+
+    <!-- Town Hall -->
+    <div class="section">
+        <div class="img-box">
+            <img src="gradskakuca.jpg" alt="Town Hall">
+        </div>
+        <div class="text-box">
+            <h2>Town Hall</h2>
+            <p>The Town Hall in Vršac (Magistrate) was built in 1795 and is one of the most beautiful Baroque buildings in this part of Serbia. Today it serves as the seat of local government and a symbol of the city's administration and history.</p>
+        </div>
+    </div>
+
+    <!-- Cathedral -->
+    <div class="section">
+        <div class="slideshow">
+            <img src="katedrala1.jpg" alt="Cathedral">
+            <img src="katedrala2.jpg" alt="Cathedral">
+            <img src="katedrala3.jpg" alt="Cathedral">
+        </div>
+        <div class="text-box">
+            <h2>Roman Catholic Church</h2>
+            <p>The Roman Catholic Church of St. Gerard of Sagredo in Vršac was built in 1863. It is one of the largest Catholic cathedrals in Serbia, known for its stained glass windows and Neo-Gothic style. Located in the town center, it is an important religious and cultural landmark.</p>
+        </div>
+    </div>
+
+    <!-- Bishop's Palace -->
+    <div class="section">
+        <div class="img-box">
+            <img src="dvor1.jpg" alt="Bishop's Palace">
+        </div>
+        <div class="text-box">
+            <h2>Bishop's Palace</h2>
+            <p>The Bishop’s Palace in Vršac is the residence of the Bishop of Banat. It was built in the 18th century and is one of the most important Orthodox residences in Serbia. It is known for its beauty, library, and iconostasis.</p>
+        </div>
+    </div>
+
+    <!-- Romanian Church -->
+    <div class="section">
+        <div class="slideshow">
+            <img src="rum1.jpg" alt="Romanian Church">
+            <img src="rum2.jpg" alt="Romanian Church">
+            <img src="rum3.jpg" alt="Romanian Church">
+        </div>
+        <div class="text-box">
+            <h2>Romanian Church</h2>
+            <p>The Romanian Orthodox Church in Vršac was built in 1913 and is located in the very center of the town. It serves as the religious center of the Romanian community in Vršac and is recognizable for its domes and richly decorated interior.</p>
+        </div>
+    </div>
+
+    <form>
+        <select name="lista" onchange="redirectToLanguage(this)">
+            <option value="znamenitostieng.html">English</option>
+             <option value="znamenitosti.html">Serbian</option>
+            
+        </select>
+    </form>
+
+    <script>
+        function redirectToLanguage(select) {
+            const url = select.value;
+            if (url) {
+                window.location.href = url;
+            }
+        }
+    </script>
+</body>
+</html>

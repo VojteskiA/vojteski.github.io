@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="./mojsajt.css" type="text/css" />
+  <title>Visitor Feedback</title>
+  <style>
+    .div1 {
+      background-color: #184327;
+      width: 100%;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #184327;
+    }
+
+    .feedback-section {
+      background-color: #22643b;
+      color: #fff4dc;
+      padding: 30px;
+      max-width: 600px;
+      margin: auto;
+      border-radius: 15px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+      font-size: 20px;
+      width: 70%;
+    }
+
+    .feedback-section h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      font-family: mojdrugifont, cursive;
+      font-size: 36px;
+      color: #f4b581;
+    }
+
+    .feedback-form {
+      display: flex;
+      flex-direction: column;
+      position: relative;
+    }
+
+    .feedback-form label {
+      margin-top: 10px;
+      margin-right: 150px;
+      font-size: 16px;
+    }
+
+    .feedback-form input,
+    .feedback-form textarea,
+    .feedback-form select {
+      padding: 10px;
+      font-size: 16px;
+      margin-top: 5px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+    }
+
+    .feedback-form button {
+      margin-top: 20px;
+      padding: 12px;
+      font-size: 18px;
+      background-color: #f4b581;
+      color: #184327;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .feedback-form button:hover {
+      background-color: #d8a06e;
+    }
+  </style>
+</head>
+<body>
+  <div class="div1">
+    <table class="navbar">
+      <tr class="nav">
+        <td><a href="./index.html">Home</a></td>
+        <td><a href="./kakodovrsca.html">How to Get to Vršac?</a></td>
+        <td><a href="./znamenitosti.html">Landmarks</a></td>
+        <td><a href="./istorijagrada.html">City History</a></td>
+        <td><a href="./galerija.html">Attractions</a></td>
+      </tr>
+    </table>
+  </div>
+
+  <form>
+    <select name="lista" onchange="redirectToLanguage(this)">
+        <option value="kontakteng.html">English</option>
+      <option value="kontakt.html">Serbian</option>
+      
+    </select>
+  </form>
+
+  <script>
+    function redirectToLanguage(select) {
+      const url = select.value;
+      if (url) {
+        window.location.href = url;
+      }
+    }
+  </script>
+
+  <section class="feedback-section">
+    <h3>Share your impressions of Vršac</h3>
+    <form class="feedback-form">
+      <label for="name">Full Name:</label>
+      <input type="text" id="name" name="name" required />
+
+      <label for="email">Email (optional):</label>
+      <input type="email" id="email" name="email" />
+
+      <label for="visited">Have you visited Vršac before?</label>
+      <select id="visited" name="visited">
+        <option value="yes">Yes</option>
+        <option value="no">No</option>
+      </select>
+
+      <label for="review">Your impression:</label>
+      <textarea id="review" name="review" rows="5" required></textarea>
+
+      <label for="rating">City rating (1-5):</label>
+      <input type="number" id="rating" name="rating" min="1" max="5" required />
+
+      <button type="submit">Submit Feedback</button>
+    </form>
+  </section>
+
+  <script>
+    document.querySelector('.feedback-form').addEventListener('submit', function (e) {
+      e.preventDefault();
+      alert("Thank you for sharing your feedback!");
+      this.reset();
+    });
+  </script>
+</body>
+</html>
